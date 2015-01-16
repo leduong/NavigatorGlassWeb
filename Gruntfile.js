@@ -832,10 +832,9 @@ module.exports = function (grunt) {
 
   grunt.registerTask('heroku', [
     'clean:dist',
-    'ngconstant:prod',
+    'ngconstant:mock',
     'useminPrepare',
     'concurrent:lessDist',
-    'autoprefixer',
     'concat',
     'ngAnnotate',
     'copy:dist',
