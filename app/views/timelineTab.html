@@ -1,0 +1,16 @@
+<div block-ui block-ui-pattern="/\/api\/timeline($|\/).*/">        
+        <div class="empty-text" ng-show="isTimelineEmpty()">            
+            The Timeline is currently empty 
+        </div>
+        <div id="card_container" class="row">
+            <div class="timelineItem" data-ng-repeat="timeline in timelines">
+                <div class="small">
+                    <div class="smallcard">
+                        <div class="card" style="left: 0px;" data-ng-click="previewTimeline(timeline,false)" ng-bind-html="timeline.thumb" ng-class="{selected: timeline.id == selectedTimeline.id}">
+                            <!--    {{timeline.output}}-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

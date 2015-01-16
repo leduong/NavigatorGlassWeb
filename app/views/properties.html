@@ -1,0 +1,84 @@
+<div class="row properties-row" data-ajax-spinner="loadingTimeline">
+    <div class="col-md-6">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-md-3">Id</label>
+                <span class="col-md-9" style="padding: 0;">{{selectedTimeline.id}}</span>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">Title</label>
+                <input type="text" class="form-control col-md-9" ng-model="selectedTimeline.title">
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">Latitude</label>
+                <input type="text" class="form-control col-md-9" ng-model="selectedTimeline.location.latitude">
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">Longitude</label>
+                <input type="text" class="form-control col-md-9" ng-model="selectedTimeline.location.longitude">
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">Address</label>
+                <input type="text" class="form-control col-md-9" ng-model="selectedTimeline.location.address">
+            </div>
+            <div class="form-group" ng-show="isTemplate()">
+                <label class="control-label col-md-3" style="margin-top: 24px;">Delivery Time</label>
+                <div class="col-md-9 time-picker">
+                   
+                    <p class="input-group col-md-5" style="float: left; margin-top: 24px;">
+                        <input type="text" class="form-control" datepicker-popup="{{datepicker.format}}" ng-model="selectedTimeline.deliveryTime" is-open="datepicker.opened" datepicker-options="datepicker.dateOptions" ng-required="false" close-text="Close" />
+                        <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+
+                    <timepicker class="col-md-3" ng-model="selectedTimeline.deliveryTime" show-meridian="true"></timepicker>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="col-md-6">
+    <form class="form-horizontal">    
+        <div class="form-group">
+            <label class="control-label col-md-3">Source Item Id</label>
+            <input type="text" class="form-control col-md-9" ng-model="selectedTimeline.sourceItemId">
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3">Canonical Url</label>
+            <input type="text" class="form-control col-md-9" ng-model="selectedTimeline.canonicalUrl">
+        </div>
+          <div class="form-group">
+             <label class="control-label col-md-3">Bundle Cover</label>             
+             <input type="checkbox" ng-model="selectedTimeline.isBundleCover" />
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3">Bundle</label>            
+            <select class="form-control" 
+                data-ng-model="selectedTimeline.bundleId"
+                data-ng-options="album.bundleId as album.title for album in albums" >
+                <option></option>
+            </select>            
+             <!-- <input type="text" class="form-control col-md-9" ng-model="selectedTimeline.bundleId"> -->
+        </div>
+
+        <div ng-show="isTimeline()">
+             <div class="form-group">
+                <label class="control-label col-md-3">Pinned</label>
+                <span ng-show="selectedTimeline.isPinned" class="glyphicon glyphicon-ok"></span>
+            </div>
+             <div class="form-group">
+                <label class="control-label col-md-3">Etag</label>
+                <span class="col-md-9">{{selectedTimeline.etag}}</span>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">Created</label>
+                <span class="col-md-9" style="padding: 0;">{{getTime(selectedTimeline.created)}}</span>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">Updated</label>
+                <span class="col-md-9" style="padding: 0; {{getUpdatedCss()}}">{{getTime(selectedTimeline.updated)}}</span>
+            </div>
+        </div>
+    </form>
+</div>
+</div>

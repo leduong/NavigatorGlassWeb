@@ -1,0 +1,16 @@
+.DS_Store
+.tmp
+.sass-cache
+*.sublime-project
+*.sublime-workspace
+/*.log
+**/*.css
+**/*.css.map
+
+
+npm-debug.log
+node_modules/
+bower_components/
+dist/
+tmp/
+app/scripts/config.js

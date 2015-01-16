@@ -1,0 +1,105 @@
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  margin-bottom: 60px;
+}
+
+a, button {
+  transition: all .25s ease-in-out;
+
+  &:hover {
+    transition: all .25s ease-in-out;
+  }
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: @f5;
+}
+
+.text-muted {
+  margin: 20px 0;
+}
+
+.form-login {
+  max-width: 330px;
+  padding: 0px 15px 5px 15px;
+  margin: 0 auto;
+
+  .form-login-heading {
+    margin-bottom: 10px;
+  }
+
+  .form-control {
+    position: relative;
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+
+    &:focus {
+      z-index: 2;
+    }
+  }
+  
+  input[type="password"] {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+/*Custom style*/
+.saveBtn {
+  margin-bottom: 20px;
+}
+
+.delBtn {
+  margin-bottom: 20px;
+}
+
+.statusBarMain {
+  margin-left: 2px;
+}
+
+/* Put your css in here */
+a:hover {
+  text-decoration: none;
+}
+
+.centered {
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.page-header {
+  padding-bottom: 9.5px;
+  margin: 42px 0 21px;
+  border-bottom: 1px solid @dd;
+}
+
+.login-form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: @charcoal;
+  background-color: @white;
+  background-image: none;
+  border: 1px solid @cc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(red(@black), green(@black), blue(@black), 0.075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  max-width: 100%;
+}

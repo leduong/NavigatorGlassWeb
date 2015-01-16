@@ -1,0 +1,17 @@
+<div ng-include src="' views/header.html'"></div>
+<div class="jumbotron">
+	<div class="container">
+		<div class="page-header text-center">
+			<h1>Navigator Glass</h1>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<form class="form-login ng-pristine ng-invalid ng-invalid-required" role="form">
+		<h2 class="form-login-heading">Sign up</h2>
+		<input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required" placeholder="Username" autofocus="">
+		<input type="password" class="form-control ng-pristine ng-invalid ng-invalid-required" placeholder="Password">
+		<input type="password" class="form-control ng-pristine ng-invalid ng-invalid-required" placeholder="Confirm Password">
+		<button class="btn btn-lg btn-info btn-block" type="submit" ng-click="authExternalProvider('Google')">Submit</button>
+	</form>
+</div>

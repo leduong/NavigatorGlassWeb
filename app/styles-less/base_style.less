@@ -1,0 +1,845 @@
+/* BASIC COMPONENTS */
+
+/* Base card size, colors, and fonts. */
+
+article {
+  width: 640px;
+  height: 360px;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: @white;
+  font-family: 'Roboto';
+  font-weight: 100;
+  font-size: 40px;
+  text-shadow: 0 1px 1px @black;
+  /*visibility: hidden;*/
+
+  a {
+    font-family: 'Roboto';
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+  }
+  
+  &:first-of-type {
+    visibility: visible;
+  }
+  
+  &.auto-paginate {
+    overflow: visible;
+    height: 283px;
+    padding: 40px 0px 37px 0px;
+    -webkit-column-width: 640px;
+    -webkit-column-gap: 0px;
+    -webkit-column-rule: 0px solid @black;
+
+    > * {
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+  }
+}
+
+/* Apply the default link style (slightly bolder, no underline, white) to
+   anchor tags. */
+
+/* Make the first card visible by default. This is so clients running older
+   Javascript still show the first card. */
+
+/* Modifications to allow content to flow across pages. */
+
+/* Keeps content of pages 40px away from the left/right edges of the screen. */
+
+/* Main content area, excluding footer. */
+
+section {
+  margin: 40px 40px 0 40px;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 80px;
+  overflow: hidden;
+}
+
+/* Remove margin on top and bottom for sections that are inside
+   auto-paginating articles. */
+
+article.auto-paginate > section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* Footer containing timestamp, auxiliary info. */
+
+footer {
+  margin: 0 40px 28px 40px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40px;
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 1.4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  > div, p, time, h1, h2, h3 {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+  img {
+    padding: 0 10px 10px 10px;
+
+    &.left {
+      padding-left: 0;
+    }
+
+    &.right {
+      padding-right: 0;
+    }
+  }
+}
+
+/* Force footer content to be single-line, ellipsized. */
+
+/* Left panel content */
+
+figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 240px;
+  overflow: hidden;
+
+  ~     section, footer {
+      left: 230px;
+    }
+
+}
+
+/** If a figure is shown, offset the section and footer to the right. */
+
+/*--------------------------------------- */
+/* ICONS */
+
+/* 30x30 icon size */
+
+img.icon-small {
+  width: 30px;
+  height: 30px;
+}
+
+/* For text sizes smaller than the icon, center the icon vertically. */
+
+.text-x-small img.icon-small {
+  vertical-align: -4px;
+}
+
+.text-small img.icon-small {
+  vertical-align: -3px;
+}
+
+/*--------------------------------------- */
+/* LISTS */
+
+ul {
+  list-style-type: none;
+}
+
+ol {
+  list-style-position: inside;
+}
+
+ul li, ol li {
+  border-bottom: 1px solid @oil;
+  padding: 6px 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+ul.no-border li, ol.no-border li {
+  border-bottom: none;
+}
+
+/* Remove top padding for lists that are the first element in a section. */
+
+section > ul:first-child li:first-child, 
+ol:first-child li:first-child {
+  padding-top: 0;
+}
+
+/* Remove bottom padding for lists that are the last element in a section. */
+
+section > ul:last-child li:last-child, 
+ol:last-child li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/*--------------------------------------- */
+/* TABLES */
+
+table {
+  width: 100%;
+  max-width: 560px;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*tr {
+  border-bottom: 1px solid @oil;
+  padding: 0;
+  max-width: 560px;
+}*/
+
+tr:last-child, table.no-border tr {
+  border-bottom: none;
+}
+
+/*td {
+  color: @white;
+  padding: 12px 0.4em;
+  overflow: hidden;
+  vertical-align: baseline;
+  max-width: 560px;
+}*/
+
+td {
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+/* Remove top padding for tables that are the first element in a section. */
+
+section > table:first-child tr:first-child td {
+  padding-top: 0;
+}
+
+table {
+  &:first-child th td {
+    padding-top: 0;
+  }
+
+  &:last-child tr:last-child td {
+    padding-bottom: 0;
+  }
+  
+  &.align-justify {
+    text-align: center;
+
+    td {
+      &:first-child {
+        text-align: left;
+      }
+    
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+}
+
+/* Remove bottom padding for tables that are the last element in a section. */
+
+/* When justifying, align the leftmost column to the left, the rightmost column to the right
+   and everything else to the center. */
+
+/*---------------------------------------
+/* MISC */
+
+hr {
+  clear: both;
+  margin: 8px 0 14px;
+  height: 0;
+  border-top: 1px solid @oil;
+}
+
+/*--------------------------------------- */
+/* FLOATS */
+
+.left {
+  float: left;
+}
+
+.right, footer time {
+  float: right;
+}
+
+/*--------------------------------------- */
+/* TYPOGRAPHY */
+
+b, strong {
+  font-weight: 300;
+}
+
+i, em {
+  font-style: italic;
+}
+
+sup {
+  font-size: 0.5em;
+  line-height: 0.3em;
+  vertical-align: super;
+  padding-left: 0.1em;
+}
+
+sub {
+  font-size: 0.5em;
+  line-height: 0.3em;
+  vertical-align: baseline;
+  padding-left: 0.1em;
+}
+
+/* Alignment */
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left !important;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+/*
+  Text sizing. We use 5 sizes: 70px, 50px, 40px, 34px, 30px. We additionally have a 90px size for
+  very short, important strings and a 26px size for footers.
+ */
+
+.text-xx-large,
+.text-x-large,
+.text-large,
+.text-normal,
+.text-small,
+.text-x-small {
+  font-weight: 100;
+  line-height: 1.2em;
+}
+
+.text-xx-large {
+  font-size: 90px;
+  letter-spacing: -1px;
+}
+
+.text-x-large {
+  font-size: 70px;
+  letter-spacing: -1px;
+}
+
+.text-large {
+  font-size: 50px;
+}
+
+.text-normal {
+  font-size: 40px;
+}
+
+.text-small {
+  font-size: 34px;
+}
+
+.text-x-small {
+  font-size: 30px;
+  letter-spacing: 0;
+}
+
+/* Footer-style text. */
+
+.text-minor {
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 1.2em;
+}
+
+/* Detected by the javascript to automatically size text. */
+
+.text-auto-size {
+  width: 100%;
+  height: 100%;
+  /* visibility: hidden;*/
+}
+
+/* Forces text onto a single line, ellipsized at the end. */
+
+.single-line {
+  height: 1.2em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/*
+  Used to create multi-line text that ends in an ellipsis. Requires specifying
+  maximum number of lines on a per element basis with -webkit-line-clamp: N;
+*/
+
+.auto-overflow {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+/*---------------------------------------
+/* LAYOUT */
+
+/* Grid boundary for all layouts. */
+
+[class^="layout-"] {
+  position: relative;
+  left: -29px;
+  right: 29px;
+  width: 618px;
+  height: 100%;
+  overflow: hidden;
+
+  &:after {
+    clear: both;
+  }
+
+  > div {
+    float: left;
+    height: 100%;
+    padding: 10px 29px 10px 30px;
+    border-right: 1px solid @steel;
+    overflow: hidden;
+
+    &:last-child {
+      border-right: none;
+      padding-right: 30px;
+    }
+  }
+
+  &.no-border > div {
+    border-right: none;
+    padding-right: 30px;
+  }
+}
+
+/* Div padding and borders for all layouts. */
+
+/* Allow the borders to be suppressed */
+
+/* Layout with 2 equally-sized columns. */
+
+.layout-two-column > div {
+  width: 249px;
+}
+
+/* Layout with 3 equally-sized columns. */
+
+.layout-three-column > div {
+  width: 146px;
+}
+
+/* Layout where the 1st column is as wide as a <figure>, and the 2nd column fills the remainder. */
+
+.layout-figure > div {
+  &:first-child {
+    width: 169px;
+  }
+
+  &:nth-child(2) {
+    width: 329px;
+  }
+}
+
+/* Always suppress borders in the footer. */
+
+footer [class^="layout-"] > div {
+  border: none;
+  padding-right: 30px;
+}
+
+/*---------------------------------------
+/* COLORS */
+
+.red {
+  color: #c33;
+}
+
+.yellow {
+  color: #db1;
+}
+
+.green {
+  color: #9c3;
+}
+
+.blue {
+  color: #34a7ff;
+}
+
+.white {
+  color: @white;
+}
+
+.gray, .muted {
+  color: @gray;
+}
+
+/*---------------------------------------
+/* ANSWER CARD METADATA */
+
+.gls-ma, .gls-tts {
+  display: none;
+}
+
+/*--------------------------------------- */
+/* Default template styling */
+
+/* Force text content to the top of the content area. */
+
+article {
+  .text-xx-large:first-child {
+    position: relative;
+    top: -13px;
+  }
+
+  .text-x-large:first-child {
+    position: relative;
+    top: -11px;
+  }
+
+  .text-large:first-child {
+    position: relative;
+    top: -8px;
+  }
+
+  .text-normal:first-child, .text-small:first-child, .text-x-small:first-child {
+    position: relative;
+    top: -5px;
+  }
+
+  &.photo {
+    section {
+      top: 170px;
+      bottom: 80px;
+    }
+  
+    div.photo-overlay {
+      display: block;
+      position: absolute;
+      top: 108px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: -webkit-linear-gradient(rgba(red(@black), green(@black), blue(@black), 0), rgba(red(@black), green(@black), blue(@black), 0.9));
+    }
+  
+    .text-x-large {
+      position: relative;
+      top: -10px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  
+    .text-large {
+      position: relative;
+      top: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  
+    .text-normal {
+      position: relative;
+      top: 11px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  
+    .text-small {
+      position: relative;
+      top: 15px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  
+    .text-x-small {
+      position: relative;
+      top: -2px;
+      overflow: hidden;
+    }
+  
+    section img {
+      &.left {
+        margin-right: 10px;
+      }
+  
+      &.right {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+/*--------------------------------------- */
+/* Photo template styling */
+
+/* Overlay gradient to allow text to be read over the image. */
+
+/*--------------------------------------- */
+/* Photo mosaic styling */
+
+/*
+ * Mosaics are unordered lists with class="mosaic mosaicN", where N = the
+ * number of photos in the mosaic, between 2-8 (mosaic1 is a no-op and defaults
+ * to regular image placement). If placed inside a <figure>, the mosaic will be
+ * a left-aligned style capable of holding up to 5 photos; otherwise, it will
+ * take up the entire card background and can hold up to 1-4, 6, or 8 photos.
+ * The user should specify the "background-image" style on each <li> tag to
+ * provide the image, rather than using <img> tags, to ensure correct scaling
+ * and centering.
+ */
+
+ul.mosaic {
+  li {
+    float: left;
+    display: block;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 640px;
+    height: 360px;
+  }
+
+  &.mosaic2 li {
+    width: 320px;
+    height: 360px;
+  }
+  
+  &.mosaic3 li {
+    width: 213px;
+    height: 360px;
+  
+    &:nth-child(3n) {
+      width: 214px;
+    }
+  }
+  
+  &.mosaic4 li, &.mosaic5 li {
+    width: 320px;
+    height: 180px;
+  }
+  
+  &.mosaic6 li, &.mosaic7 li {
+    width: 213px;
+    height: 180px;
+  }
+  
+  &.mosaic6 li:nth-child(3n), 
+  &.mosaic7 li:nth-child(3n) {
+    width: 214px;
+  }
+  
+  &.mosaic8 li {
+    width: 160px;
+    height: 180px;
+  }
+}
+
+/* Give the rightmost image the extra pixel. */
+
+/* Give the rightmost images the extra pixel. */
+
+/* Overrides for mosaics that are inside figures. */
+
+figure ul.mosaic {
+  li {
+    width: 240px;
+    height: 360px;
+  }
+
+  &.mosaic2 li {
+    width: 240px;
+    height: 180px;
+  }
+  
+  &.mosaic3 li {
+    &:first-child {
+      width: 240px;
+      height: 180px;
+    }
+  
+    &:nth-child(2), &:nth-child(3) {
+      width: 120px;
+      height: 180px;
+    }
+  }
+  
+  &.mosaic4 li {
+    &:first-child {
+      width: 240px;
+      height: 180px;
+    }
+  
+    &:nth-child(2) {
+      width: 240px;
+      height: 90px;
+    }
+
+    &:nth-child(3), &:nth-child(4) {
+      width: 120px;
+      height: 90px;
+    }
+  }
+
+  &.mosaic5 li {
+    &:first-child {
+      width: 240px;
+      height: 180px;
+    }
+
+    &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+      width: 120px;
+      height: 90px;
+    }
+  }
+}
+
+/*--------------------------------------- */
+/* Author template styling */
+
+/* The author template provides a header at the top of the card that contains
+ * an avatar image of the content author along with a primary heading (such as
+ * the author's name/username) and a secondary heading.
+ */
+
+article {
+  &.author {
+    header {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      height: 70px;
+      padding-left: 90px;
+      margin: 40px 40px 40px 40px;
+      font-size: 26px;
+      font-weight: 300;
+
+      > img {
+          position: absolute;
+          left: 0;
+          width: 70px;
+          height: 70px;
+        }
+
+        h1 {
+          color: @white;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          line-height: 36px;
+        }
+
+        h2 {
+          color: @gray;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          margin-top: -2px;
+        }
+    }
+
+    section {
+      top: 88px;
+      height: 160px;
+    }    
+  }
+}
+
+/* Move the body section to be underneath the header. */
+
+/* Overlay gradient to allow text to be read over the image. */
+
+/* For cards with two lines of text (excluding footer)
+ * ex: hybrid templates & those needing more bottom readability
+ */
+
+div {
+  &.overlay-gradient-tall {
+    display: block;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: -webkit-linear-gradient(rgba(red(@black), green(@black), blue(@black), 0), rgba(red(@black), green(@black), blue(@black), 0.8));
+  }
+
+  &.overlay-gradient-tall-dark {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: -webkit-linear-gradient(rgba(red(@black), green(@black), blue(@black), 0.2) 30%, rgba(red(@black), green(@black), blue(@black), 0.85) 100%);
+  }
+
+  &.overlay-gradient-medium {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: -webkit-linear-gradient(rgba(red(@black), green(@black), blue(@black), 0), rgba(red(@black), green(@black), blue(@black), 0.8));
+  }
+
+  &.overlay-gradient-short {
+    display: block;
+    position: absolute;
+    top: 70%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: -webkit-linear-gradient(rgba(red(@black), green(@black), blue(@black), 0), rgba(red(@black), green(@black), blue(@black), 0.6));
+  }
+  
+  &.overlay-full {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(red(@black), green(@black), blue(@black), 0.7);
+  }
+}
+
+/* A darker variant of the above gradient to improve readability. */
+
+/* For cards with one line of text (excluding footer)
+ * ex: photos, videos, people
+ */
+
+/* For cards with low text
+ * ex: footer, tooltips
+ */

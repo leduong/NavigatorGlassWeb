@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="no-js">
+<head>
+
+    <meta charset="utf-8"/>
+    <title></title>
+
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width"/>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css({.tmp,app}) styles/app.css -->
+    <link href="styles/app.css" rel="stylesheet"/>
+    <!-- endbuild -->
+    <!-- build:css(.) styles/vendor.css -->
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="bower_components/angularjs-toaster/toastr.css" rel="stylesheet"/>
+    <!-- endbuild -->
+
+</head>
+
+<body ng-app="navigatorGlassProjectApp">
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="container">
+        <div ng-view=""></div>
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
+    </script>
+
+
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/ace-builds/src-noconflict/ace.js"></script>
+    <script src="bower_components/ace-builds/src-noconflict/mode-javascript.js"></script>
+    <script src="bower_components/ace-builds/src-noconflict/mode-scheme.js"></script>
+    <script src="bower_components/angular-ui-ace/ui-ace.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="bower_components/angular-block-ui/dist/angular-block-ui.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angularjs-toaster/toaster.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/ui.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/ace-builds/src-noconflict/ace.js"></script>
+    <script src="bower_components/ace-builds/src-noconflict/mode-javascript.js"></script>
+    <script src="bower_components/ace-builds/src-noconflict/mode-scheme.js"></script>
+    <script src="bower_components/angular-ui-ace/ui-ace.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="bower_components/angular-block-ui/dist/angular-block-ui.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angularjs-toaster/toaster.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/timelineCtrl.js"></script>
+    <script src="scripts/controllers/loginCtrl.js"></script>
+    <script src="scripts/controllers/authCtrl.js"></script>
+    <script src="scripts/controllers/locationsCtrl.js"></script>
+    <script src="scripts/controllers/templatesCtrl.js"></script>
+    <script src="scripts/controllers/subscriptionCtrl.js"></script>    
+    <script src="scripts/controllers/associateCtrl.js"></script>
+    <script src="scripts/controllers/refreshCtrl.js"></script>
+    <script src="scripts/controllers/tokenCtrl.js"></script>
+    <script src="scripts/controllers/headerCtrl.js"></script>    
+
+    <script src="scripts/services/globalService.js"></script>
+    <script src="scripts/services/httpService.js"></script>
+    <script src="scripts/services/authService.js"></script>
+    <script src="scripts/services/timelineService.js"></script>
+    <script src="scripts/services/locationService.js"></script>
+    <script src="scripts/services/templateService.js"></script>
+    <script src="scripts/services/SubscriptionService.js"></script>
+    <script src="scripts/services/menuItemService.js"></script>
+    <script src="scripts/services/authInterceptorService.js"></script>
+    <script src="scripts/services/tokensManagerService.js"></script>
+
+    <script src="scripts/directives/pane.js"></script>
+    <script src="scripts/directives/tabs.js"></script>
+    <script src="scripts/directives/tabset.js"></script>    
+    <script src="scripts/directives/card.js"></script>
+
+    <!-- 
+    <script src="external/ui-bootstrap.js"></script>
+    <script src="external/ui-bootstrap-tpl.js"></script> -->
+
+    <script src="scripts/libs/loading-bar.min.js"></script>
+
+    <script src="scripts/mocks.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

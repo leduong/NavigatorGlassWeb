@@ -1,0 +1,701 @@
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header, .marketing, .footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid @e5;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+/* Make the masthead heading the same height as the navigation */
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: @monsoon;
+  border-top: 1px solid @e5;
+}
+
+/* Customize container */
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid @e5;
+
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header, .marketing, .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+/* Set padding to keep content from hitting the edges */
+
+.body-content {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+
+input, select {
+  max-width: 280px;
+}
+
+/* styles for validation helpers */
+
+.field-validation-error {
+  color: #b94a48;
+}
+
+.field-validation-valid {
+  display: none;
+}
+
+input {
+  &.input-validation-error {
+    border: 1px solid #b94a48;
+  }
+
+  &[type="checkbox"].input-validation-error {
+    border: 0 none;
+  }
+}
+
+.validation-summary-errors {
+  color: #b94a48;
+}
+
+.validation-summary-valid {
+  display: none;
+}
+
+/*Custom style*/
+
+.clear {
+  clear: both;
+}
+
+.navbar-btn {
+  margin: 0;
+}
+
+.body-content {
+  min-height: 600px;
+}
+
+.timelineList {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: 400px;
+  padding: 0 15px;
+  white-space: nowrap;
+  position: relative;
+  margin-top: 20px;
+}
+
+.timelineRow {
+  width: 200%;
+}
+
+.timelineItem {
+  padding: 0;
+  height: 500px;
+  width: 500px;
+}
+
+.clients-carousel {
+  border: 1px solid @f6;
+  overflow: hidden;
+}
+
+.flex-viewport {
+  max-height: 2000px;
+}
+
+.clients-carousel ul.clients {
+  background: @fc;
+}
+
+.slides, .flex-control-nav, .flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.detailsContainer {
+  margin-top: 50px;
+  width: 90%;
+  max-height: 560px;
+  height: 500px;
+}
+
+#card_container {
+  margin-left: 2px;
+  width: 99%;
+  height: 200px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-top: 20px;
+  color: @white;
+  font-size: 30px;
+}
+
+.timelineItem {
+  display: inline-block;
+  height: 144px;
+  width: 256px;
+  margin: 2px 5px;
+
+  &:first-of-type {
+    margin-left: 0px;
+  }
+}
+
+.timelineCard {
+  margin: 10px;
+  height: 144px;
+  width: 256px;
+}
+
+iframe {
+  border: 0px;
+}
+
+.tabbable li {
+  border-bottom: none;
+  padding: 0px;
+}
+
+div.small {
+  height: 144px;
+  width: 256px;
+  overflow: hidden;
+}
+
+.smallcard {
+  transform: scale(0.4);
+  transform-origin: left top;
+  width: 660px;
+  height: 380px;
+  cursor: pointer;
+}
+
+.card {
+  width: 640px;
+  height: 360px;
+  position: absolute;
+  background-color: #444;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.smallcard > {
+  .card {
+    border: 10px solid @white;
+  }
+
+  .selected {
+    border-color: #3072E1;
+  }
+}
+
+.previewContainer:hover .scroll {
+  opacity: 0.7;
+}
+
+.scroll {
+  cursor: pointer;
+  height: 346px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 100;
+}
+
+.leftscroll {
+  left: 0px;
+  background-image: url('../images/page_left.svg');
+}
+
+.rightscroll {
+  left: 552px;
+  background-image: url('../images/page_right.svg');
+}
+/*end card*/
+
+.topContainer {
+  max-height: 560px;
+  height: 400px;
+  transition: height .1s ease-in-out;
+  color: white;
+}
+
+.previewContainer {
+  height: 360px;
+}
+
+.detailsProps {
+  width: 670px;
+}
+
+
+.sourceContainer {
+  transition: opacity 0.2s ease-in-out 0s;
+  margin-right: 0px;
+}
+
+.timelineEditor {
+  overflow-y: scroll;
+  overflow-y: hidden;
+  max-height: 360px;
+}
+
+.sourceBox {
+  min-height: 318px;
+  max-height: 318px;
+  padding: 10px;
+  color: gray;
+  display: block;
+  font-family: monospace;
+  font-size: 16px;
+  font-variant: normal;
+  font-weight: normal;
+  resize: none;
+  border: 1px solid rgba(red(@black), green(@black), blue(@black), 0.1);
+  outline: none;
+  overflow-x: hidden;
+  box-shadow: 1px 2px 4px rgba(red(@black), green(@black), blue(@black), 0.1);
+}
+
+.jsonRep {
+  overflow-y: scroll;
+  min-width: 570px;
+  min-height: 318px;
+  max-height: 318px;
+  padding: 10px;
+  color: gray;
+  display: block;
+  font-family: monospace;
+  font-size: 16px;
+  font-variant: normal;
+  font-weight: normal;
+  resize: none;
+  border: 1px solid rgba(red(@black), green(@black), blue(@black), 0.1);
+  outline: none;
+  overflow-x: hidden;
+  box-shadow: 1px 2px 4px rgba(red(@black), green(@black), blue(@black), 0.1);
+  white-space: pre;
+}
+
+.propertiesContent {
+  margin: 29px 0 0;
+
+  .tab-content{
+    height: 215px; 
+    margin: 10px;
+  }
+}
+
+.propSize {
+  max-width: 80% !important;
+  min-width: 80% !important;
+}
+
+.scalable {
+  width: 592px;
+  height: 346px;
+  position: absolute;
+  overflow: hidden;
+  transform-origin: left top;
+}
+
+.codeEdotor {
+  max-width: 620px;
+}
+
+.propContent {
+  border: none;
+  margin: 10px;
+}
+
+.menuContent {
+  border: none;
+  margin: 10px;
+  min-height: 200px;
+
+  .list-menu{
+    height: 170px;
+    -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+
+      span {  
+        width: 200px;
+        display: inline-block;
+      }
+  }
+}
+
+/*.ace_editor { height: 200px; }*/
+
+/* Put your css in here */
+.fade-show-setup {
+  opacity: 0;
+
+  &.fade-show-start {
+    transition: all linear 1s;
+    opacity: 1;
+  }
+}
+
+.fade-hide-setup {
+  opacity: 1;
+
+  &.fade-hide-start {
+    transition: all linear 1s;
+    opacity: 0;
+  }
+}
+
+.sample-show-hide {
+  padding: 10px;
+
+  &.ng-hide-add, &.ng-hide-remove {
+    transition: all linear 0.5s;
+    display: block!important;
+  }
+
+  &.ng-hide-add.ng-hide-add-active, &.ng-hide-remove {
+    opacity: 0;
+  }
+
+  &.ng-hide-add, &.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+  }
+}
+
+
+.speakableTextTab {
+  min-height: 318px;
+  max-height: 318px;
+}
+
+.propLabel {
+  text-align: left !important;
+}
+
+.propList {
+  margin: 10px;
+}
+
+.disableItem {
+  background-color: @ee;
+}
+
+.propParContent {
+  margin-top: 29px;
+}
+
+.panel-body .empty-text {
+  color: @aa;
+  font-size: 36px;
+  margin: 60px 0 0 50px;
+  position: absolute;
+}
+
+.tickIcon {
+  height: 32px;
+  width: 32px;
+  background: url('../../Images/tick-icon.png');
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.crossIcon {
+  height: 32px;
+  width: 32px;
+  background: url('../../Images/cross-icon.png');
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.speakable-text {
+  width: 100%;
+  min-height: 200px;
+}
+
+.location-scroll {
+  padding-top: 20px;
+  width: 100%;
+  height: 200px;
+  overflow-x: visible;
+  overflow-y: hidden;
+}
+
+// I didn't want to implement jScrollPane for now -> [http://jscrollpane.kelvinluck.com/#download]
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(red(@black), green(@black), blue(@black),.25);
+}
+
+.ajax-spinner-message {
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  background: url('../images/728.gif') no-repeat;
+  background-position: center;
+}
+
+.has-error {
+  background-color: @pink;
+}
+
+/*Button*/
+.map-button {
+  cursor: pointer;
+  box-sizing: content-box;
+  min-width: 4em;
+  margin-left: 0;
+  padding: .25em 1em;
+  border-radius: 1px;
+  border: 1px solid rgba(red(@black), green(@black), blue(@black), 0.1);
+  color: @tuatara;
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 2em;
+  user-select: none;
+  background-color: #ccc;
+
+  &:hover {
+    background-color: #999;
+  }
+
+  &.map-button-submit {
+    background-color: #4d90fe;
+    color: @white;
+
+    &:hover {
+      background-color: #3079ed;
+    }
+  }
+
+
+  .glyphicon {
+    font-size: 1em;
+    vertical-align: baseline;
+    color: #333;
+  }
+}
+
+.map-buttonbar {
+  margin: 0px 15px;
+  padding-bottom: 15px;
+
+  .map-button, .map-combobutton, .map-expandbutton {
+    margin: 0;
+    margin-left: 16px;
+    position: relative;
+    cursor: pointer;
+    overflow: visible;
+    z-index: 1;
+  }
+  
+  .map-button:first-child {
+    margin-left: 0;
+  }
+
+  .config{
+    position: relative;
+    float: right;
+  }
+}
+
+/*Block UI*/
+
+.block-ui.spinner-container {
+  background: @white;
+}
+
+.block-ui-overlay {
+  opacity: 1;
+}
+
+.block-ui-message {
+  background: url('../images/728.gif') transparent;
+  width: 64px;
+  height: 68px;
+}
+
+/*Subscription*/
+#subscription_container {
+  margin-left: 2px;  
+  height: 200px;  
+  white-space: nowrap;
+  padding-top: 20px;
+  color: @black;  
+  font-size: 14px;    
+  font-weight: normal;
+
+  .collection {
+    width: 80px;
+    display: inline-block;
+    text-transform: capitalize;
+  }
+
+  .operation-item {
+    display: inline;
+    font-style: italic;
+    text-transform: capitalize;
+  }
+
+  .operation-key {
+    margin-right: 10px;
+  }
+
+  .btn{
+    margin-top: 20px;
+  }
+
+}
+
+/*Custom menu*/
+.scroll-bar-box {
+    width: 100%;
+    height:100%;
+    position:relative;
+    display:inline-block;
+
+    border-top:1px solid #ebebeb; /*FOR IE*/
+    border-bottom:1px solid #ebebeb; /*FOR IE*/
+    border-top:1px solid rgba(0, 0, 0, 0.1);
+    border-bottom:1px solid rgba(0, 0, 0, 0.1);
+
+    -webkit-box-sizing:border-box;
+    border: 0;
+    overflow: hidden;
+    margin-top: -40px;    
+
+    > .scroll-bar-inner {
+      height: 92px;
+    }
+
+    #menu-item-list {
+      min-width: 200px;
+      width: 100%;
+      overflow-y: hidden;
+      height: 90px;
+      margin: 0 -10px -10px 0;
+    }
+
+    .scroll-bar-inner {
+        height: 100%;
+        overflow: auto;
+        padding: 5px 5px 15px 0;
+    }
+
+    .menu-item {
+      position: relative;
+      width: 25%;
+      height: 82px;
+      overflow: hidden;
+      display: inline-table;
+      cursor: pointer;
+      margin-left: 10px;
+      background-color: #555;
+      border: 3px solid #777;
+      -webkit-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.5);
+      -moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.5);
+      box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.5);
+    }
+
+    .menu-item:active{
+      top: 1px;      
+      opacity: 0.9;
+      outline: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    .menu-item-value {
+        padding: 25px 0;
+        height: 0;
+    }
+    .menu-item:first-child {
+        margin-left: 0px;
+    }
+
+
+    .menu-item-icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .menu-item-display-name {
+        font-size: 14px;
+        display: inline;
+        color: white;
+    }
+
+    .confirmed{
+      border-color: @confirm;
+    }
+
+    .pendding{
+      border-color: @pendding;
+    }
+}

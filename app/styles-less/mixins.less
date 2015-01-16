@@ -1,0 +1,150 @@
+// Keyframes mixin -- simple style
+//
+// We'll include it then like below: 
+// .keyframes(cool-animation) {
+//      0%      { color: #000; }
+//      50%     { color: #050; }
+//      100%    { color: #100; }
+// }
+// 
+.keyframes(@name) {
+    @-webkit-keyframes @{name} {
+        @content; 
+    }
+    @-moz-keyframes @{name} {
+        @content;
+    }
+    @-o-keyframes @{name} {
+        @content;
+    }
+    @keyframes @{name} {
+        @content;
+    } 
+}
+
+// Animation
+.animation(@animation-args) {
+    -webkit-animation: @animation-args;
+    animation: @animation-args;
+}
+
+// Animation delay
+.animation-delay(@animation-delay-args) {
+    -webkit-animation-delay: @animation-delay-args;
+    animation-delay: @animation-delay-args;
+}
+
+// Animation duration
+.animation-duration(@animation-duration-args) {
+    -webkit-animation-duration: @animation-duration-args;
+    animation-duration: @animation-duration-args;
+}
+
+// Animation iteration count
+.animation-iteration-count(@animation-iteration-count-args) {
+    -webkit-animation-iteration-count: @animation-iteration-count-args;
+    animation-iteration-count: @animation-iteration-count-args;
+}
+
+// Animation Fill Mode:
+.animation-fill-mode(@animation-fill-mode-args) {
+    -webkit-animation-fill-mode: @animation-fill-mode-args;
+    animation-fill-mode: @animation-fill-mode-args;
+}
+
+.animation-timing-function(@animation-timing-function-args) {
+    -webkit-animation-timing-function: @animation-timing-function-args;
+    animation-timing-function: @animation-timing-function-args;
+}
+
+// Transform 
+.transform(@transform-args) {
+    -webkit-transform: @transform-args;
+    -moz-transform: @transform-args;
+    -ms-transform: @transform-args;
+    transform: @transform-args;
+}
+
+// Transform origin
+.transform-origin(@transform-origin-args) {
+    -webkit-transform-origin: @transform-origin-args;
+    -moz-transform-origin: @transform-origin-args;
+    -ms-transform-origin: @transform-origin-args;
+    transform-origin: @transform-origin-args;
+}
+
+// Transition
+.transition(@transition-args...) {
+    -webkit-transition: @transition-args;
+    -o-transition: @transition-args;
+    transition: @transition-args;
+}
+
+// Transition property
+.transition-property(@transition-property-args...) {
+    -webkit-transition-property: @transition-property-args;
+    -o-transition-property: @transition-property-args;
+    transition-property: @transition-property-args;
+}
+
+// Transition timing function
+.transition-timing-function(@transition-timing-function-args) {
+    -webkit-transition-timing-function: @transition-timing-function-args;
+    transition-timing-function: @transition-timing-function-args;
+}
+
+// Border radius
+.border-radius(@radius) {
+    -webkit-border-radius: @radius;
+    border-radius: @radius;
+}
+
+// User select 
+.user-select(@user-select-args) {
+    -webkit-user-select: @user-select-args;
+    -moz-user-select: @user-select-args;
+    -ms-user-select: @user-select-args;
+    user-select: @user-select-args;
+}
+
+// Box sizing
+.box-sizing(@bs-val) {
+  -webkit-box-sizing: @bs-val;
+  -moz-box-sizing: @bs-val;
+  box-sizing: @bs-val;    
+}
+
+// Gradients -- Burbon style
+.linear-gradient(@pos, @G1, @G2: null, @G3: null, @G4: null, @G5: null, @G6: null, @G7: null, @G8: null, @G9: null, @G10: null, @fallback: null) {
+    // Detect what type of value exists in @pos
+    @pos-type: type-of(nth(@pos, 1));
+    @pos-spec: null;
+    @pos-degree: null;
+
+    // If @pos is missing from mixin, reassign vars and add default position
+    & when (@pos-type = color) or (nth(@pos, 1) = "transparent")  {
+        @G10: @G9; @G9: @G8; @G8: @G7; @G7: @G6; @G6: @G5;
+        @G5: @G4; @G4: @G3; @G3: @G2; @G2: @G1; @G1: @pos;
+        @pos: null;
+    }
+
+    & when @pos {
+        @positions: _linear-positions-parser(@pos);
+        @pos-degree: nth(@positions, 1);
+        @pos-spec:   nth(@positions, 1);
+    }
+
+    @full: @G1, @G2, @G3, @G4, @G5, @G6, @G7, @G8, @G9, @G10;
+
+    // Set @G1 as the default fallback color
+    @fallback-color: nth(@G1, 1);
+
+    // If @fallback is a color use that color as the fallback color
+    & when (type-of(@fallback) = color) or (@fallback = "transparent") {
+        @fallback-color: @fallback;
+    }
+
+    background-color: @fallback-color;
+    background-image: -webkit-linear-gradient(@pos-degree @full); 
+    background-image: unquote("linear-gradient(~"@pos-spec"@{full})");
+}

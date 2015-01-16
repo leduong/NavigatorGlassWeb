@@ -1,0 +1,22 @@
+<div ng-include src="' views/header.html'"></div>
+<div class="jumbotron">
+	<div class="container">
+		<div class="page-header text-center">
+			<h1>Navigator Glass</h1>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<form role="form" class="ng-pristine ng-invalid ng-invalid-required">
+		<div class="row">
+			<div class="col-md-2">
+				&nbsp;
+			</div>
+			<div class="col-md-4" ng-controller="AuthCtrl">
+				<h2 class="form-login-heading">Social Logins</h2>
+				<p>You can login using one of the social logins below</p>
+				<button class="btn btn-large btn-google-plus btn-block" type="button" ng-click="authExternalProvider('Google')"><i class="fa fa-google-plus"></i> | Connect with Google+</button>
+			</div>
+		</div>
+	</form>
+</div>

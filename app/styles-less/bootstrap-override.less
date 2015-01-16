@@ -1,0 +1,128 @@
+.nav-tabs {
+  > li {
+    margin-bottom: -1px;
+    border-bottom: 0;
+    padding: 6px 0 0;
+
+    &.active {
+      > a {
+        color: @jet;
+      }
+    }
+
+    > a {
+      cursor: pointer;
+      padding: 0px 8px;
+      border: 1px solid transparent;
+      border-radius: 0;
+      color: @steel;
+      line-height: 2;
+
+      &:hover {
+        background: transparent;
+        border: 1px solid transparent;
+      }
+    }
+  }
+}
+
+.properties-row {
+  padding: 10px;
+}
+
+.form-control {
+  font-size: .75em;
+  padding: 0 .5em;
+  border-radius: 1px;
+  height: 2.5em;
+}
+
+.time-picker {
+  padding: 0;
+
+  .btn {
+    padding: 1px 5px;
+  }
+}
+
+.date-time {
+  .btn-date {
+    padding: 1px 6px;
+  }
+
+  .btn-link {
+    padding: 0;
+  }
+
+  label, .date-control {
+    margin-top: 23px !important;
+  }
+
+  .time-control {
+    float: left;
+    table {
+      width: 120px !important;
+    }
+
+    td {
+      input[type="text"] {
+        width: 40px;
+      }
+
+      button {
+        height: 24px;
+        padding: 0px 10px;
+      }
+
+      &:nth-child(2) {
+        width: 10px !important;
+      }
+    }
+  }
+  
+  .input-group-addon {
+    width: 0%;
+  }
+}
+
+.input-group-btn {
+  width: 0%;
+}
+
+.date-time table thead tr th {
+  font-weight: bold;
+}
+
+.form-horizontal .control-label {
+  font-size: 11px;
+  height: 27px;
+  line-height: 27px;
+  padding-top: 0px;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 2px;
+}
+
+.navbar-inverse {
+  border-color: #4d90fe;
+  background-color: #4d90fe;
+  color: white;
+
+  .navbar-brand {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 20px 15px 15px;
+  } 
+  
+  .navbar-nav > li > a {
+    color: white;
+  }
+}
+
+@media (min-width: @screen-sm-min) {}
+@media (min-width: @screen-md-min) {}
+@media (min-width: @screen-lg-min) {}

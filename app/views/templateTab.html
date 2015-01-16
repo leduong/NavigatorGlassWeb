@@ -1,0 +1,17 @@
+ <div ng-controller="TemplatesCtrl" block-ui block-ui-pattern="/\/api\/template($|\/).*/"> 
+    <div class="empty-text" ng-show="isTemplateEmpty()">
+        The Template currently empty
+    </div>
+    <div id="card_container" class="row">
+        <div class="timelineItem" data-ng-repeat="templateTimelineItem in templateTimelines">
+            <div class="small">
+                <div class="smallcard">
+                    <div class="card" style="left: 0px;" data-ng-click="previewTimeline(templateTimelineItem,true)" ng-bind-html="templateTimelineItem.thumb" ng-class="{selected: templateTimelineItem.id == selectedTimeline.id}">
+                        <!--    {{timeline.output}}-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+ </div>
+        

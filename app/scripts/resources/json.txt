@@ -1,0 +1,31 @@
+{
+  "kind": "mirror#timelineItem",
+  "id": "0bc9c945-4e49-4cda-8481-c86d824de709",
+  "isBundleCover": false,
+  "selfLink": "https://www.googleapis.com/mirror/v1/timeline/0bc9c945-4e49-4cda-8481-c86d824de709",
+  "created": "2014-12-04T06:46:10.115Z",
+  "updated": "2014-12-04T06:46:10.115Z",
+  "etag": "1417675570115",
+  "title": "Mustache Template",
+  "html": "  <article>    <figure>      <img src=\"glass://map?w=240&amp;h=360&amp;marker=0;40.726967,-73.998397&amp;marker=1\" width=\"240\" height=\"360\">    </figure>    <section>      <h2 class=\"yellow\">Bust of Sylvette</h2>      <hr>      <p class=\"text-minor\">             Lat: <span class=\"muted\">40.726967</span><br>             Lon: <span class=\"muted\">-73.998397</span></p>    </section>  </article>",
+  "location": {
+    "kind": "mirror#location",
+    "latitude": 40.726967,
+    "longitude": -73.998397,
+    "address": "Bust of Sylvette"
+  },
+  "menuItems": [
+    {
+      "id": "1001",
+      "action": "CUSTOM",
+      "values": [
+        {
+          "state": "DEFAULT",
+          "displayName": "Custom Menu Item A",
+          "iconUrl": "https://mirror-api-playground.appspot.com/links/icons_30_0000_blue.png"
+        }
+      ],
+      "removeWhenSelected": false
+    }
+  ]
+}

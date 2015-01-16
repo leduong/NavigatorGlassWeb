@@ -1,0 +1,139 @@
+<div ng-include src="' views/header.html'"></div>
+<div class="row">            
+    <div class="row main-container">
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="map-buttonbar">
+                        <div id="api-actions" style="display: block;">
+                            <button class="map-button app-bar-button" id="reload-button" ng-click="loadTimelines()">
+                                <span class="glyphicon glyphicon-repeat" aria-hidden="true" alt="Reload"></span>
+                            </button>
+
+                            <button 
+                                class="map-button app-bar-button" id="delete-button" style="display: inline;"
+                                ng-show="isTimeline()" ng-click="onDelete()">                   
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true" alt="Delete"></span>
+                            </button>
+
+                            <button id="send-button" style="display: inline;"
+                                class="map-button map-button-submit app-bar-action-button" 
+                                ng-click="onUpdate()" ng-show="isTimeline()" >
+                                Update Item        
+                            </button>
+
+                            <button id="send-button" style="display: inline;"
+                                class="map-button map-button-submit app-bar-action-button"
+                                ng-click="onInsert()" ng-show="isTemplate()" >
+                                Insert Item        
+                            </button>
+
+                            <button class="map-button app-bar-button config" data-toggle="modal" data-target="#subscription">
+                                <span class="glyphicon glyphicon-cog"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">                    
+                    <div class="col-md-6 topContainer">
+                        <div class="previewContainer">
+                            <div data-card="selectedTimeline">
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="col-md-6 sourceContainer codeEditor">
+                         <tabitem>
+                            <pane heading="{{tabName}}">
+                                <div class="sourceBox" data-ui-ace="aceOption" data-ng-model="selectedTimeline.output"></div>
+                            </pane>
+                            <pane heading="JSON">
+                                <div class="jsonRep" data-ui-ace="aceOption" data-ng-model="selectedTimeline.jsonRepresentation"></div>
+                            </pane>
+                        </tabitem>
+                    </div>                    
+                </div>
+
+                <div class="row"> 
+                    <div id="menu-item-box" class="scroll-bar-box col-md-12">
+                        <div class="scroll-bar-inner">
+                            <div id="menu-item-list">
+                                <div class="menu-item {{menu.state.toLowerCase()}}" ng-repeat="menu in selectedTimeline.menuItems" ng-click="onMenuItemClick(menu)">
+                                    <center class="menu-item-value">
+                                        <img class="menu-item-icon" ng-src="{{menu.iconUrl}}">
+                                        <p class="menu-item-display-name">{{menu.displayName}}</p>
+                                    </center>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row propertiesContent">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="panel panel-default">
+                                <div class="panel-body propList">
+                                    <tabitem>
+                                        <pane heading="Properties">
+                                            <div data-ng-include="" data-src="'./views/properties.html'"></div>
+                                        </pane>
+                                        <pane heading="Menu Items">
+                                            <div data-ng-include="" data-src="'./views/menuitems.html'"></div>
+                                        </pane>
+                                        <pane heading="Speakable Text">
+                                            <div data-ng-include="" data-src="'./views/speakabletext.html'"></div>
+                                        </pane>
+                                    </tabitem>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default timeline-item">
+            <div class="panel-body">
+                <tabsetitem>
+                    <tabi title="Timeline" template-url="./views/timelineTab.html"></tabi>
+                    <tabi title="Locations" template-url="./views/locationsTab.html"></tabi>
+                    <tabi title="Templates" template-url="./views/templateTab.html"></tabi>                    
+                </tabsetitem>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Subscription Modal -->
+<div ng-controller="subscriptionCtrl" class="modal fade" id="subscription" tabindex="-1" role="dialog" aria-labelledby="subscriptionModalLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="subscriptionModalLabel">Subscription</h4>
+      </div>
+      <div class="modal-body" block-ui block-ui-pattern="/\/api\/subscription($|\/).*/">
+            <div id="subscription_container" class="row" >
+                <div ng-repeat="subscription in subscriptions" class="subscription-item">
+                    <span class="collection">{{subscription.collection}}</span>
+                    <div ng-repeat="c in subscription.operation" class="operation-item">
+                        <input type="checkbox" ng-model="c.value"  /> <span class="operation-key">{{c.key.toLowerCase()}}</span>
+                    </div>  
+                </div>                
+            </div>  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button ng-click="onSave()" type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<toaster-container></toaster-container>
