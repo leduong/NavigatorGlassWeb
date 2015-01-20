@@ -92,7 +92,7 @@ module.exports = function (grunt) {
         },
         files: [
           '<%= yeoman.app %>/{,*/}*.html',
-          "<%= yeoman.app %>/styles-less/**/*.less",
+          '<%= yeoman.app %>/styles-less/**/*.less',
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
@@ -108,7 +108,7 @@ module.exports = function (grunt) {
     },
     open: {
       server: {
-        url: "http://localhost:<%= connect.options.port %>"
+        url: 'http://localhost:<%= connect.options.port %>'
       }
     },
     less: {
