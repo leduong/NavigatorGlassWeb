@@ -1,5 +1,15 @@
 language: node_js
 node_js:
   - '0.10'
+  - '0.11'
+  
+before_install:
+  - npm install -g bower
+  - npm install -g grunt-cli
+
+install:
+  - bower install
+  - npm install
+  
 before_script:
-  - 'npm install -g bower grunt-cli; bower install; grunt heroku'
+  - grunt heroku
